@@ -86,8 +86,8 @@ class PTT(GenericRegModel):
         else:
             raise NotImplementedError
         self.knn_k = 20
-        self.level = 1
-        self.fine_voxel_size = 0.2 # 0.3 for 3dmatch
+        self.level = cfg.layers - 1
+        self.fine_voxel_size = cfg.fine_voxel_size # 0.3 for 3dmatch
         encoder_layer = Tree_TransformerLayer(
             cfg.d_embed, cfg.nhead, cfg.d_feedforward, cfg.dropout,
             activation=cfg.transformer_act,
@@ -97,6 +97,7 @@ class PTT(GenericRegModel):
             attention_type=cfg.attention_type,
             knn_k=self.knn_k
         )
+        self.growing = cfg.growing
 
         encoder_norm = nn.LayerNorm(cfg.d_embed) if cfg.pre_norm else None
         self.transformer_encoder = Tree_Transformer(
@@ -190,7 +191,7 @@ class PTT(GenericRegModel):
             else:
                 batch = torch.cat([torch.tensor([ii] * o) for ii, o in enumerate(slens_c)], 0).long().cuda()
 
-            window_size = torch.tensor([self.fine_voxel_size * (6**i)]*3).type_as(points).to(points.device)
+            window_size = torch.tensor([self.fine_voxel_size * (self.growing**i)]*3).type_as(points).to(points.device)
 
             if bias == True:
                 v2p_map, p2v_map, counts = self.grid_sample(points + torch.tensor([self.fine_voxel_size/2]*3,device='cuda').reshape(1,-1), batch, window_size, start=None)

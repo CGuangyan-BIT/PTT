@@ -63,6 +63,9 @@ model:
   dropout: 0.0 # dropout not compatible
   pre_norm: True
   transformer_act: relu
+  fine_voxel_size: 0.12
+  layers: 2
+  Growing: 6
 
   # Transformer encoder
   num_encoder_layers: 6
