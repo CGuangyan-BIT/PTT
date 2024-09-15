@@ -1,5 +1,0 @@
-# ninja log v5
-0	13008	1653637208213600391	/home/cgy/Vs_project/2023CVPR/QuadTreeAttention-master/QuadTreeAttention/build/temp.linux-x86_64-3.7/QuadtreeAttention/src/score_computation.o	b8790d83012bf9f2
-0	28826	1653637224033534686	/home/cgy/Vs_project/2023CVPR/QuadTreeAttention-master/QuadTreeAttention/build/temp.linux-x86_64-3.7/QuadtreeAttention/src/score_computation_kernal.o	938fbb97e8df3f4b
-0	12823	1653637237365478441	/home/cgy/Vs_project/2023CVPR/QuadTreeAttention-master/QuadTreeAttention/build/temp.linux-x86_64-3.7/QuadtreeAttention/src/value_aggregation.o	356836d7c96806e4
-0	27111	1653637251657417285	/home/cgy/Vs_project/2023CVPR/QuadTreeAttention-master/QuadTreeAttention/build/temp.linux-x86_64-3.7/QuadtreeAttention/src/value_aggregation_kernel.o	271d6964fce5e1ac
