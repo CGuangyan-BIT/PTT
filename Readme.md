@@ -2,7 +2,7 @@
 
 In this work, we propose the Point Tree Transformer (PTT), a novel transformer-based approach for point cloud registration that efficiently extracts comprehensive local and global features while maintaining linear computational complexity. The PTT constructs hierarchical feature trees from point clouds in a coarse-to-dense manner, and introduces a novel Point Tree Attention (PTA) mechanism, which follows the tree structure to facilitate the progressive convergence of attended regions towards salient points.
 
-![PointTreeTransformer_network Network Architecture](assets/PointTreeTransformer_network.png "PointTreeTransformer Network Architecture")
+![PointTreeTransformer_network Network Architecture](assets/PointTreeTransformer_network.jpg "PointTreeTransformer Network Architecture")
 
 If you find this useful, please cite:
 
